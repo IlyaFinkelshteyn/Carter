@@ -20,6 +20,9 @@ configuration: Release
 build:
   verbosity: minimal
 
+before_build:
+- nuget restore
+
 nuget:
   disable_publish_on_pr: true
 
@@ -36,7 +39,7 @@ environment:
 
 skip_branch_with_pr: true
 
-test: 
-  assemblies:
-    only:
-      - \test\**\*.Tests.dll
+#test: 
+#  assemblies:
+#    only:
+#      - \test\**\*.Tests.dll
